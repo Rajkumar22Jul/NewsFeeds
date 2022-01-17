@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:newsfeed/Components/customListTile.dart';
-import 'package:newsfeed/Model/article_model.dart';
-import 'package:newsfeed/Pages/drawer.dart';
-import 'package:newsfeed/Services/api_service.dart';
+import 'package:news_feed/Components/customListTile.dart';
+import 'package:news_feed/Model/article_model.dart';
+import 'package:news_feed/Services/api_service.dart';
+import 'drawer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -24,10 +24,10 @@ class _HomePageState extends State<HomePage> {
         future: client.getArticle(),
         builder: (BuildContext context, AsyncSnapshot<List<Article>> snapshot) {
           if (snapshot.hasData) {
-            List<Article>? articles = snapshot.data;
+            List<Article> articles = snapshot.data;
             return ListView.builder(
                 itemCount: articles?.length,
-                itemBuilder: (context, index) => customListTile(articles![index], context)
+                itemBuilder: (context, index) => customListTile(articles[index], context)
             );
           }
           return Center(

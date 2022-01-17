@@ -21,7 +21,7 @@ class ContactPage extends StatelessWidget {
             companyColor: Colors.blueAccent,
             dividerThickness: 2,
             phoneNumber: '+917818044311',
-            website: 'https://abhishekdoshi.godaddysites.com',
+            website: 'https://earth.google.com/web/',
             githubUserName: 'Rajkumar22Jul',
             tagLine: 'Demo App for News',
             taglineColor: Colors.blue,

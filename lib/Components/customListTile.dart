@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:newsfeed/Model/article_model.dart';
-import 'package:newsfeed/Pages/article_page.dart';
+import 'package:news_feed/Model/article_model.dart';
+import 'package:news_feed/Pages/article_page.dart';
+
 
 
 Widget customListTile(Article article, BuildContext context) {

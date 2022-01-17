@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:newsfeed/Pages/contact_page.dart';
-import 'package:newsfeed/Pages/settings_page.dart';
-
+import 'package:news_feed/Pages/settings_page.dart';
 import 'about_page.dart';
+import 'contact_page.dart';
 import 'home_page.dart';
 
 class MainDrawer extends StatelessWidget {
-  const MainDrawer({Key? key}) : super(key: key);
+  const MainDrawer({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

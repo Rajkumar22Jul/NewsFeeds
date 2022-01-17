@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:newsfeed/Model/article_model.dart';
+import 'package:news_feed/Model/article_model.dart';
 
 
 class ArticlePage extends StatelessWidget {
   final Article article;
 
-  ArticlePage({required this.article});
+  ArticlePage({ this.article});
 
   @override
   Widget build(BuildContext context) {
