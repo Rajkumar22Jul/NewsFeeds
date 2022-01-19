@@ -20,7 +20,7 @@ class ContactPage extends StatelessWidget {
             companyName: 'News Feed',
             companyColor: Colors.blueAccent,
             dividerThickness: 2,
-            phoneNumber: '+917818044311',
+            phoneNumber: '+918489094282',
             website: 'https://earth.google.com/web/',
             githubUserName: 'Rajkumar22Jul',
             tagLine: 'Demo App for News',
