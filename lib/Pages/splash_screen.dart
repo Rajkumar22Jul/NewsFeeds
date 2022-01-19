@@ -2,7 +2,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:news_feed/ConnectionCheck/no_internet.dart';
 import 'home_page.dart';
 
 class SplashScreenPage extends StatefulWidget {
@@ -15,7 +14,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   void initState(){
     super.initState();
     Timer(Duration(seconds: 3),(){
-      Get.off(NoInternet());
+      Get.off(HomePage());
     });
   }
   Widget build(BuildContext context) {
