@@ -1,28 +1,60 @@
 import 'package:flutter/material.dart';
-
+import 'package:news_feed/Services/notification_service.dart';
 import 'drawer.dart';
 
-class NotificationPage extends StatefulWidget {
-  NotificationPage({Key key, this.title}) : super(key: key);
 
-  final String title;
+class NotificationPage extends StatefulWidget {
+  const NotificationPage({Key key}) : super(key: key);
 
   @override
-  _NotificationPageState createState() => _NotificationPageState();
+  State<NotificationPage> createState() => _NotificationPageState();
 }
 
 class _NotificationPageState extends State<NotificationPage> {
+  String notificationTitle = 'No Title';
+  String notificationBody = 'No Body';
+  String notificationData = 'No Data';
+
+  @override
+  void initState() {
+    final firebaseMessaging = FCM();
+    firebaseMessaging.setNotifications();
+
+    firebaseMessaging.streamCtlr.stream.listen(_changeData);
+    firebaseMessaging.bodyCtlr.stream.listen(_changeBody);
+    firebaseMessaging.titleCtlr.stream.listen(_changeTitle);
+
+    super.initState();
+  }
+
+  _changeData(String msg) => setState(() => notificationData = msg);
+  _changeBody(String msg) => setState(() => notificationBody = msg);
+  _changeTitle(String msg) => setState(() => notificationTitle = msg);
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(title:Text("Notification",
         textAlign: TextAlign.start,
       )
       ),
       drawer: MainDrawer(),
-      body: Center(child: Text("Notifications",textScaleFactor: 2,)),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              notificationTitle,
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            Text(
+              notificationBody,
+              style: Theme.of(context).textTheme.headline6,
+            ),
+
+          ],
+        ),
+      ),
     );
   }
 }
