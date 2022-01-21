@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:news_feed/Pages/notification.dart';
 import 'package:news_feed/Pages/settings_page.dart';
 import 'about_page.dart';
 import 'contact_page.dart';
@@ -49,6 +50,13 @@ class MainDrawer extends StatelessWidget {
             },
             leading: Icon(Icons.contact_support),
             title: Text("Contant Us"),
+          ),
+          ListTile(
+            onTap: (){
+              Get.off(NotificationPage());
+            },
+            leading: Icon(Icons.notifications),
+            title: Text("Notification"),
           )
         ],
       ),

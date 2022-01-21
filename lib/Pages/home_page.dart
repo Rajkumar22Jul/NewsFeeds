@@ -46,18 +46,6 @@ class _HomePageState extends State<HomePage> {
           builder: (BuildContext context,
               AsyncSnapshot<ConnectivityResult> snapshot){
             if(snapshot != null && snapshot.hasData && snapshot.data != ConnectivityResult.none){
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Image.asset('assets/images/nonet.jpeg',height: 200,alignment: Alignment.center,),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text("No Internet Connection")
-                ],
-              );
-            } else {
               return FutureBuilder(
                 future: client.getArticle(),
                 builder: (BuildContext context, AsyncSnapshot<List<Article>> snapshot) {
@@ -72,6 +60,18 @@ class _HomePageState extends State<HomePage> {
                     child: CircularProgressIndicator(),
                   );
                 },
+              );
+            } else {
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset('assets/images/nonet.jpeg',height: 200,alignment: Alignment.center,),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text("No Internet Connection")
+                ],
               );
             }
           }
