@@ -1,8 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
 
+import 'Pages/connectivity_porvider.dart';
 import 'Pages/home_page.dart';
 import 'Pages/splash_screen.dart';
 
@@ -22,13 +24,21 @@ Future init() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'News Feed',
-        theme: ThemeData(
-          //primarySwatch: Colors.green,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => ConnectivityProvider(),
+          child: HomePage(),
         ),
-        home: SplashScreenPage(),
-        debugShowCheckedModeBanner: false,
+      ],
+      child: GetMaterialApp(
+        title: 'News Feed',
+          theme: ThemeData(
+            //primarySwatch: Colors.green,
+          ),
+          home: HomePage(),
+          debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }
