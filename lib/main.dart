@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 
-import 'Pages/connectivity_porvider.dart';
+import 'Constant/connectivity_porvider.dart';
 import 'Pages/home_page.dart';
 import 'Pages/splash_screen.dart';
 
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             //primarySwatch: Colors.green,
           ),
-          home: HomePage(),
+          home: SplashScreenPage(),
           debugShowCheckedModeBanner: false,
       ),
     );

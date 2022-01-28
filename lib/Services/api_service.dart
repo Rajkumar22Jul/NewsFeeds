@@ -2,8 +2,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:news_feed/Model/article_model.dart';
 
-
-
 class ApiService {
   final endPointUrl = "newsapi.org";
   final client = http.Client();

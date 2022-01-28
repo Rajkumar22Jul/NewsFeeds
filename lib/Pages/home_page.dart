@@ -8,9 +8,9 @@ import 'package:news_feed/Services/api_service.dart';
 import 'package:provider/provider.dart';
 
 
-import 'connectivity_porvider.dart';
+import '../Constant/connectivity_porvider.dart';
 import 'drawer.dart';
-import 'no_internet.dart';
+import '../Connectivity/no_internet.dart';
 
 class HomePage extends StatefulWidget {
   @override
